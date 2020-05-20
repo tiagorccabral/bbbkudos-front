@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function OurChannels() {
-    return (
-        <div>
-            our channels
-        </div>
-    );
-};
+    return <div>our channels</div>;
+}
 
 export default OurChannels;

@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
-function QuickLinks () {
-    return (
-        <div>
-            links rapidos
-        </div>
-    );
-};
+function QuickLinks() {
+    return <div>links rapidos</div>;
+}
 
 export default QuickLinks;

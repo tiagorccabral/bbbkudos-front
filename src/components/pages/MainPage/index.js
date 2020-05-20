@@ -1,10 +1,8 @@
-import React from "react"
+import React from "react";
 import MediaFooter from "../../shared/MediaFooter";
 
 function MainPage() {
-    return (
-        <div></div>
-    );
+    return <div></div>;
 }
 
-export default MainPage
+export default MainPage;

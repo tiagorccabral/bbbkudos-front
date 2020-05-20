@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 import QuickLinks from "./QuickLinks";
-import {MediaFooterContainer} from "./styles";
+import { MediaFooterContainer } from "./styles";
 import OurChannels from "./OurChannels";
 
 function MediaFooter() {
-    return(
+    return (
         <MediaFooterContainer>
-            <QuickLinks/>
-            <OurChannels/>
+            <QuickLinks />
+            <OurChannels />
         </MediaFooterContainer>
-
     );
 }
 

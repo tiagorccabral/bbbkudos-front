@@ -1,5 +1,5 @@
-import React from "react"
-import { FooterContainer, TextContainer, FooterText } from "./styles"
+import React from "react";
+import { FooterContainer, TextContainer, FooterText } from "./styles";
 
 function Footer() {
     return (
@@ -8,7 +8,7 @@ function Footer() {
                 <FooterText>voltar ao topo</FooterText>
             </TextContainer>
         </FooterContainer>
-    )
+    );
 }
 
-export default Footer
+export default Footer;
