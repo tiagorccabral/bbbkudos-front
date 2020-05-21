@@ -18,7 +18,7 @@ class NavbarComponent extends Component {
         if (auth.isAuthenticated) {
             navComponent = (
                 <>
-                    <Navbar sticky="top" className="justify-content-between">
+                    <Navbar className="justify-content-between">
                         <Navbar.Brand href="/kudos-board">
                             <NavbarImage
                                 alt="LOGO"
@@ -27,9 +27,9 @@ class NavbarComponent extends Component {
                         </Navbar.Brand>
                         <Nav className="mr-auto">
                             <Nav.Link>|</Nav.Link>
-                            <Nav.Link href="#features">Dê um kudo</Nav.Link>
-                            <Nav.Link href="#pricing">Timeline</Nav.Link>
-                            <Nav.Link href="#pricing">Meus kudos</Nav.Link>
+                            <Nav.Link href="/kudos-board">Dê um kudo</Nav.Link>
+                            <Nav.Link href="/timeline">Timeline</Nav.Link>
+                            <Nav.Link href="/my-kudos">Meus kudos</Nav.Link>
                         </Nav>
                         <Navbar.Collapse className="justify-content-end mr-sm-2">
                             <Navbar.Text>
@@ -43,7 +43,7 @@ class NavbarComponent extends Component {
         } else {
             navComponent = (
                 <>
-                    <Navbar sticky="top" className="justify-content-between">
+                    <Navbar className="justify-content-between">
                         <Navbar.Brand href="/kudos-board">
                             <NavbarImage
                                 alt="LOGO"

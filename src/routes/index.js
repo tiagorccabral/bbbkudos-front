@@ -4,7 +4,7 @@ import Route from "./Route";
 import Navbar from "../components/shared/Navbar";
 import ToastAlert from "../components/shared/ToastAlert";
 import Footer from "../components/shared/Footer";
-import MainPage from "../components/pages/MainPage";
+import KudosBoard from "../components/pages/KudosBoard";
 import MediaFooter from "../components/shared/MediaFooter";
 import Login from "../components/pages/Auth/Login";
 
@@ -15,7 +15,7 @@ function Routes() {
             <Navbar/>
             <Switch>
                 <Route path="/" exact component={Login} />
-                <Route path="/kudos-board" component={MainPage} isPrivate />
+                <Route path="/kudos-board" component={KudosBoard} isPrivate />
                 <Route path="/login" component={Login} />
             </Switch>
             <MediaFooter />

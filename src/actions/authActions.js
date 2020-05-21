@@ -2,8 +2,6 @@ import axios from 'axios';
 import {toast} from "react-toastify";
 
 import {apiEndPoint, setAuthToken} from "../utils/globals";
-// import setAuthToken from '../utils/setAuthToken';
-import {clearErrors} from "./errorActions";
 import {GET_ERRORS, SET_CURRENT_USER} from "./types";
 
 
