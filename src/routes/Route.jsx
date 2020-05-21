@@ -8,7 +8,7 @@ class RouteWrapper extends Component {
         const {auth} = this.props;
 
         if (isPrivate && auth && !auth.isAuthenticated) {
-            return <Redirect to="/"/>;
+            return <Redirect to="/login"/>;
         }
 
         if (!isPrivate && auth && auth.isAuthenticated) {

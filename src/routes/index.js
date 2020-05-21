@@ -12,7 +12,8 @@ function Routes() {
         <div>
             <ToastAlert/>
             <Switch>
-                <Route path="/" exact component={MainPage} />
+                <Route path="/" exact component={Login} />
+                <Route path="/kudos-board" component={MainPage} isPrivate />
                 <Route path="/login" component={Login} />
             </Switch>
             <MediaFooter />
