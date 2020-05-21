@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {black1, grey1, mediaTitleTextSize} from "../../../global/styles";
+import { black1, grey1, mediaTitleTextSize } from "../../../global/styles";
 
 export const MediaNavItemTitle = styled.div`
     color: ${grey1};
@@ -26,7 +26,7 @@ export const MediaIconsContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
 `;
 
 export const MediaLinkIcon = styled.a`

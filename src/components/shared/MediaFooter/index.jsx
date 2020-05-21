@@ -8,17 +8,17 @@ import OurChannels from "./OurChannels";
 function MediaFooter() {
     return (
         <Container>
-           <Row>
-               <Col sm={8} xs={"auto"}>
-                   {/*SlackComponent*/}
-               </Col>
-               <Col>
-                   <QuickLinks />
-               </Col>
-               <Col>
-                   <OurChannels />
-               </Col>
-           </Row>
+            <Row>
+                <Col sm={8} xs={"auto"}>
+                    {/*SlackComponent*/}
+                </Col>
+                <Col>
+                    <QuickLinks />
+                </Col>
+                <Col>
+                    <OurChannels />
+                </Col>
+            </Row>
         </Container>
     );
 }
