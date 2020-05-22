@@ -25,7 +25,7 @@ export const OverlayBoxImage = styled.div`
 `;
 
 export const FaceBoxContainer = styled.div`
-    height: 9em;
+    height: 10em;
     width: 100%;
  `;
 
@@ -55,7 +55,7 @@ export const KudosOptionsContainer = styled.div`
     width: 80%;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 2em;
+    margin-top: 3em;
     opacity: 1;
 `;
 

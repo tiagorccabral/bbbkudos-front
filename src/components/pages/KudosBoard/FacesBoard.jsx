@@ -26,7 +26,7 @@ class FacesBoard extends Component {
 
     renderFaces = () => {
         return this.props.users.users.map(user => (
-            <Col key={user.id} xs={3}>
+            <Col key={user.id} xs={6} md={4} lg={3}>
                 <FaceBoxContainer>
                     <FaceBoxImage
                         src={`${imageEndpoint}/${user.profile_image}`}

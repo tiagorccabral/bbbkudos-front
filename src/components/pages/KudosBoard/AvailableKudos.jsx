@@ -18,7 +18,7 @@ class AvailableKudos extends Component {
     render() {
         return (
             <Row>
-                <Col xs={6}>
+                <Col xs={10} md={6}>
                     <Card>
                         <Card.Body>
                             <AvailableKudosTitleContainer>
