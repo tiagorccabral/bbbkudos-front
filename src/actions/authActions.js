@@ -1,21 +1,21 @@
-import axios from 'axios';
-import {toast} from "react-toastify";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-import {apiEndPoint, setAuthToken} from "../utils/globals";
-import {GET_ERRORS, SET_CURRENT_USER} from "./types";
-
+import { apiEndPoint, setAuthToken } from "../utils/globals";
+import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 // Login - Get User Token
-export const loginUser = ({userData}) => dispatch => {
-    const data = {user: userData};
-    axios.post(`${apiEndPoint}/login`, data)
-        .then(res => {
+export const loginUser = ({ userData }) => (dispatch) => {
+    const data = { user: userData };
+    axios
+        .post(`${apiEndPoint}/login`, data)
+        .then((res) => {
             // Save to localStorage
-            const {jwt} = res.data;
+            const { jwt } = res.data;
 
             // Set token to ls
-            localStorage.setItem('jwtToken', jwt);
-            localStorage.setItem('userData', JSON.stringify(res.data.user));
+            localStorage.setItem("jwtToken", jwt);
+            localStorage.setItem("userData", JSON.stringify(res.data.user));
 
             // Set token to auth header
             setAuthToken(jwt);
@@ -26,34 +26,33 @@ export const loginUser = ({userData}) => dispatch => {
             // reload page to avoid problems on first request
             window.location.reload(false);
         })
-        .catch(err => {
-                dispatch({
-                    type: GET_ERRORS,
-                    payload: err.response.data
-                });
-                toast.error("Ocorreu um erro!");
-            }
-        );
+        .catch((err) => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data,
+            });
+            toast.error("Ocorreu um erro!");
+        });
 };
 
 // Logout user
 export const logoutUser = () => {
     return (dispatch) => {
         // remove Token from localStorage
-        localStorage.removeItem('jwtToken');
-        localStorage.removeItem('userData');
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("userData");
         // remove auth token for future requests
-        setAuthToken(false) // Por passar false, o token ira ser removido das requests
+        setAuthToken(false); // Por passar false, o token ira ser removido das requests
         // set current user to {} which will set isAuthenticated to false
         dispatch(setCurrentUser({}));
-        toast.success("Logout realizado com sucesso!")
-    }
+        toast.success("Logout realizado com sucesso!");
+    };
 };
 
 // Set logged in user
 export const setCurrentUser = (decodedUser) => {
     return {
         type: SET_CURRENT_USER,
-        payload: decodedUser
-    }
+        payload: decodedUser,
+    };
 };

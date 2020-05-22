@@ -11,8 +11,8 @@ import Login from "../components/pages/Auth/Login";
 function Routes() {
     return (
         <div>
-            <ToastAlert/>
-            <Navbar/>
+            <ToastAlert />
+            <Navbar />
             <Switch>
                 <Route path="/" exact component={Login} />
                 <Route path="/kudos-board" component={KudosBoard} isPrivate />

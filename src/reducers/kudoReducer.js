@@ -1,7 +1,7 @@
-import {GET_AVAILABLE_KUDOS_SUCCESS} from '../actions/types';
+import { GET_AVAILABLE_KUDOS_SUCCESS } from "../actions/types";
 
 const initialState = {
-    availableKudos: null
+    availableKudos: null,
 };
 
 export default function (state = initialState, action) {
@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
         case GET_AVAILABLE_KUDOS_SUCCESS:
             return {
                 ...state,
-                availableKudos: action.payload
+                availableKudos: action.payload,
             };
         default:
             return state;

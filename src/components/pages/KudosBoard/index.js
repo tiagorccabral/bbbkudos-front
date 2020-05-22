@@ -1,5 +1,5 @@
 import React from "react";
-import {ContentSeparator, PageTitle} from "../styles";
+import { ContentSeparator, PageTitle } from "../styles";
 import Container from "react-bootstrap/Container";
 import FacesBoard from "./FacesBoard";
 import AvailableKudos from "./AvailableKudos";
@@ -9,8 +9,8 @@ function KudosBoard() {
         <Container>
             <ContentSeparator>
                 <PageTitle>Dê um kudo!</PageTitle>
-                <AvailableKudos/>
-                <FacesBoard/>
+                <AvailableKudos />
+                <FacesBoard />
             </ContentSeparator>
         </Container>
     );

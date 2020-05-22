@@ -1,7 +1,7 @@
-import {GET_ALL_USERS_SUCCESS} from '../actions/types';
+import { GET_ALL_USERS_SUCCESS } from "../actions/types";
 
 const initialState = {
-    users: null
+    users: null,
 };
 
 export default function (state = initialState, action) {
@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
         case GET_ALL_USERS_SUCCESS:
             return {
                 ...state,
-                users: action.payload
+                users: action.payload,
             };
         default:
             return state;

@@ -1,21 +1,25 @@
-import React, {Component} from 'react';
-import {Navbar, Form, Button, Nav} from "react-bootstrap";
-import {connect} from 'react-redux';
-import {NavbarImage, ProfilePictureImage, TooltipRoundDiv, TooltipText} from "./style";
-import {logoutUser} from "../../../actions/authActions";
-import {imageEndpoint} from "../../../utils/globals";
+import React, { Component } from "react";
+import { Navbar, Form, Button, Nav } from "react-bootstrap";
+import { connect } from "react-redux";
+import {
+    NavbarImage,
+    ProfilePictureImage,
+    TooltipRoundDiv,
+    TooltipText,
+} from "./style";
+import { logoutUser } from "../../../actions/authActions";
+import { imageEndpoint } from "../../../utils/globals";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 // import Logo from '../../../media/logonova.png'
 
 class NavbarComponent extends Component {
-
     render() {
         const onLogoutPress = () => {
             this.props.logoutUser();
         };
 
-        const {auth} = this.props;
+        const { auth } = this.props;
         let navComponent = null;
 
         if (auth.isAuthenticated) {
@@ -30,12 +34,12 @@ class NavbarComponent extends Component {
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end mr-sm-2">
-                        <Nav className="mr-auto">
-                            <Nav.Link>|</Nav.Link>
-                            <Nav.Link href="/kudos-board">Dê um kudo</Nav.Link>
-                            <Nav.Link href="/timeline">Timeline</Nav.Link>
-                            <Nav.Link href="/my-kudos">Meus kudos</Nav.Link>
-                        </Nav>
+                            <Nav className="mr-auto">
+                                <Nav.Link>|</Nav.Link>
+                                <Nav.Link href="/kudos-board">Dê um kudo</Nav.Link>
+                                <Nav.Link href="/timeline">Timeline</Nav.Link>
+                                <Nav.Link href="/my-kudos">Meus kudos</Nav.Link>
+                            </Nav>
                             <OverlayTrigger
                                 key="right"
                                 placement="right"
@@ -53,11 +57,15 @@ class NavbarComponent extends Component {
                                 alt="LOGO"
                                 src={`${imageEndpoint}/${auth.user.profile_image}`}
                             />
+                            <Navbar.Text>{auth.user.name}</Navbar.Text>
                             <Navbar.Text>
-                                {auth.user.name}
-                            </Navbar.Text>
-                            <Navbar.Text>
-                                <Button className="mr-2" variant="link" onClick={onLogoutPress}>Sair</Button>
+                                <Button
+                                    className="mr-2"
+                                    variant="link"
+                                    onClick={onLogoutPress}
+                                >
+                                    Sair
+                                </Button>
                             </Navbar.Text>
                         </Navbar.Collapse>
                     </Navbar>
@@ -80,24 +88,24 @@ class NavbarComponent extends Component {
                             <Nav.Link href="#pricing">Meus kudos</Nav.Link>
                         </Nav>
                         <Form inline>
-                            <Button className="mr-2" variant="link" href="/cadastro">Cadastrar</Button>
-                            <Button className="mr-2" variant="link" href="/login">Entrar</Button>
+                            <Button className="mr-2" variant="link" href="/cadastro">
+                                Cadastrar
+                            </Button>
+                            <Button className="mr-2" variant="link" href="/login">
+                                Entrar
+                            </Button>
                         </Form>
                     </Navbar>
                 </>
             );
         }
 
-        return (
-            <>
-                {navComponent}
-            </>
-        );
+        return <>{navComponent}</>;
     }
 }
 
-const mapStateToProps = state => ({
-    auth: state.auth
+const mapStateToProps = (state) => ({
+    auth: state.auth,
 });
 
-export default connect(mapStateToProps, {logoutUser})(NavbarComponent);
+export default connect(mapStateToProps, { logoutUser })(NavbarComponent);
