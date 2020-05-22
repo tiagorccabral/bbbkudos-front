@@ -9,13 +9,13 @@ function MediaFooter() {
     return (
         <Container>
             <Row>
-                <Col sm={8} xs={"auto"}>
+                <Col xs={12} sm={12} md={6}>
                     {/*SlackComponent*/}
                 </Col>
-                <Col>
+                <Col xs={6} sm={4} md={3}>
                     <QuickLinks />
                 </Col>
-                <Col>
+                <Col xs={6} sm={4} md={3}>
                     <OurChannels />
                 </Col>
             </Row>
