@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import moment from "moment";
 import {
     AvailableKudosOptionsContainer,
     AvailableKudosSubtitle,
@@ -18,10 +19,11 @@ import {isEmpty} from "../../../utils/validation";
 
 class AvailableKudos extends Component {
     componentDidMount() {
-        this.props.getAvailableKudos({user_id: this.props.auth.user.id});
+        this.props.getAvailableKudos({sender_id: this.props.auth.user.id});
     }
 
     render() {
+        const {kudos} = this.props;
         return (
             <Row>
                 <Col xs={10} md={6}>
@@ -32,7 +34,9 @@ class AvailableKudos extends Component {
                                     Selos Disponíveis
                                 </AvailableKudosTitle>
                                 <AvailableKudosSubtitle>
-                                    Atualizado em: 12/12/2020
+                                    Atualizado em: {!isEmpty(kudos.availableKudos) ? (
+                                    moment(kudos.availableKudos[kudos.availableKudos.length - 1].updated_at).locale('pt-br').format('MMMM Do YYYY, h:mm a')
+                                ) : ''}
                                 </AvailableKudosSubtitle>
                             </AvailableKudosTitleContainer>
                             <AvailableKudosOptionsContainer>
@@ -40,7 +44,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={studentImg} alt="student"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[0].available_kudos : '' }
+                                            {!isEmpty(kudos.availableKudos) ? kudos.availableKudos[0].available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
@@ -48,7 +52,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={clappingHandsImg} alt="clapping-hands"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[1].available_kudos : '' }
+                                            {!isEmpty(kudos.availableKudos) ? kudos.availableKudos[1].available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
@@ -56,7 +60,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={prayHandsImg} alt="pray-hands"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[2] .available_kudos : '' }
+                                            {!isEmpty(kudos.availableKudos) ? kudos.availableKudos[2].available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
