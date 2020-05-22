@@ -12,8 +12,15 @@ import {blue1, pink1, yellow1} from "../../../global/styles";
 import studentImg from "../../../media/student.png";
 import clappingHandsImg from "../../../media/clapping-hands.png";
 import prayHandsImg from "../../../media/pray-hands.png";
+import {getAvailableKudos} from "../../../actions/kudoActions";
+import {connect} from "react-redux";
+import {isEmpty} from "../../../utils/validation";
 
 class AvailableKudos extends Component {
+    componentDidMount() {
+        this.props.getAvailableKudos({user_id: this.props.auth.user.id});
+    }
+
     render() {
         return (
             <Row>
@@ -33,7 +40,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={studentImg} alt="student"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            2
+                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[0].available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
@@ -41,7 +48,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={clappingHandsImg} alt="clapping-hands"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            1
+                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[1].available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
@@ -49,7 +56,7 @@ class AvailableKudos extends Component {
                                     <KudosOptionImg src={prayHandsImg} alt="pray-hands"/>
                                     <KudosAvailableDiv>
                                         <KudosAvailableText>
-                                            0
+                                            {!isEmpty(this.props.kudos.availableKudos) ? this.props.kudos.availableKudos[2] .available_kudos : '' }
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
@@ -63,4 +70,9 @@ class AvailableKudos extends Component {
     }
 }
 
-export default AvailableKudos;
+const mapStateToProps = state => ({
+    auth: state.auth,
+    kudos: state.kudos
+});
+
+export default connect(mapStateToProps, {getAvailableKudos})(AvailableKudos);
