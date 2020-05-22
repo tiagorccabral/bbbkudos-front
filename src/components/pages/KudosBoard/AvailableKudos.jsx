@@ -6,8 +6,7 @@ import {
     AvailableKudosOptionsContainer,
     AvailableKudosSubtitle,
     AvailableKudosTitle,
-    AvailableKudosTitleContainer, KudosOption, KudosOptionImg,
-    KudosOptionsContainer, OverlayBoxImage
+    AvailableKudosTitleContainer, KudosAvailableDiv, KudosAvailableText, KudosOption, KudosOptionImg
 } from "./styles";
 import {blue1, pink1, yellow1} from "../../../global/styles";
 import studentImg from "../../../media/student.png";
@@ -32,12 +31,27 @@ class AvailableKudos extends Component {
                             <AvailableKudosOptionsContainer>
                                 <KudosOption color={blue1}>
                                     <KudosOptionImg src={studentImg} alt="student"/>
+                                    <KudosAvailableDiv>
+                                        <KudosAvailableText>
+                                            2
+                                        </KudosAvailableText>
+                                    </KudosAvailableDiv>
                                 </KudosOption>
                                 <KudosOption color={yellow1}>
                                     <KudosOptionImg src={clappingHandsImg} alt="clapping-hands"/>
+                                    <KudosAvailableDiv>
+                                        <KudosAvailableText>
+                                            1
+                                        </KudosAvailableText>
+                                    </KudosAvailableDiv>
                                 </KudosOption>
                                 <KudosOption color={pink1}>
                                     <KudosOptionImg src={prayHandsImg} alt="pray-hands"/>
+                                    <KudosAvailableDiv>
+                                        <KudosAvailableText>
+                                            0
+                                        </KudosAvailableText>
+                                    </KudosAvailableDiv>
                                 </KudosOption>
                             </AvailableKudosOptionsContainer>
                         </Card.Body>

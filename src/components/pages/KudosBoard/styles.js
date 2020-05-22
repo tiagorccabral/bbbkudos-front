@@ -109,3 +109,27 @@ export const AvailableKudosSubtitle = styled.div`
     font-weight:bolder;
     font-size: 0.7em;
 `;
+
+export const KudosAvailableDiv = styled.div`
+    position: absolute;
+    display: flex;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    margin-top: 0.9em;
+    background-color: ${black1}
+`;
+
+export const KudosAvailableText = styled.div`
+    font-family: 'Patua One', cursive, sans-serif;
+    color: white;
+    font-weight:bolder;
+    font-size: 0.5em;
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+`;
