@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import Spinner from "react-bootstrap/Spinner";
 import {
     FaceBoxContainer,
     FaceBoxImage,
-    FacesBoardContainer,
+    FacesBoardContainer, KudosOption, KudosOptionImg, KudosOptionsContainer,
     OverlayBoxImage,
     SubTitleFaceBox,
     TitleFaceBox
@@ -13,7 +14,9 @@ import {getAllUsers} from "../../../actions/userActions";
 import {connect} from "react-redux";
 import {isEmpty} from "../../../utils/validation";
 import {imageEndpoint} from "../../../utils/globals";
-import Spinner from "react-bootstrap/Spinner";
+import clappingHandsImg from "../../../media/clapping-hands.png";
+import prayHandsImg from "../../../media/pray-hands.png";
+import studentImg from "../../../media/student.png"
 
 class FacesBoard extends Component {
     componentDidMount() {
@@ -34,6 +37,17 @@ class FacesBoard extends Component {
                         <TitleFaceBox>
                             {user.name.substr(0,user.name.indexOf(' '))}
                         </TitleFaceBox>
+                        <KudosOptionsContainer>
+                            <KudosOption color="#149eec">
+                                <KudosOptionImg src={studentImg} alt="student"/>
+                            </KudosOption>
+                            <KudosOption color="#fff40b">
+                                <KudosOptionImg src={clappingHandsImg} alt="clapping-hands"/>
+                            </KudosOption>
+                            <KudosOption color="#e50079">
+                                <KudosOptionImg src={prayHandsImg} alt="pray-hands"/>
+                            </KudosOption>
+                        </KudosOptionsContainer>
                     </OverlayBoxImage>
                 </FaceBoxContainer>
             </Col>
