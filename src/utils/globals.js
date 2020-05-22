@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const endpointUrl = "http://localhost:3000";
 
-export const apiEndPoint = "http://localhost:3000/v1";
+export const apiEndPoint = `${endpointUrl}/v1`;
+export const imageEndpoint = `${endpointUrl}`;
 
 export const setAuthToken = token => {
     if (token) {

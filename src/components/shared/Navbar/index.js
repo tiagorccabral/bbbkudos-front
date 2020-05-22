@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Navbar, Form, Button, Nav} from "react-bootstrap";
 import {connect} from 'react-redux';
-import {NavbarImage} from "./style";
+import {NavbarImage, ProfilePictureImage} from "./style";
 import {logoutUser} from "../../../actions/authActions";
+import {imageEndpoint} from "../../../utils/globals";
 // import Logo from '../../../media/logonova.png'
 
 class NavbarComponent extends Component {
@@ -32,6 +33,10 @@ class NavbarComponent extends Component {
                             <Nav.Link href="/my-kudos">Meus kudos</Nav.Link>
                         </Nav>
                         <Navbar.Collapse className="justify-content-end mr-sm-2">
+                            <ProfilePictureImage
+                                alt="LOGO"
+                                src={`${imageEndpoint}/${auth.user.profile_image}`}
+                            />
                             <Navbar.Text>
                                 {auth.user.name}
                             </Navbar.Text>
