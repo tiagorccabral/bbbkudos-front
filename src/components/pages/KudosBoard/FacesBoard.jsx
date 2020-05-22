@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import Spinner from "react-bootstrap/Spinner";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import {connect} from "react-redux";
 import {
     FaceBoxContainer,
     FaceBoxImage,
@@ -8,15 +11,13 @@ import {
     SubTitleFaceBox,
     TitleFaceBox
 } from "./styles";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import {getAllUsers} from "../../../actions/userActions";
-import {connect} from "react-redux";
 import {isEmpty} from "../../../utils/validation";
 import {imageEndpoint} from "../../../utils/globals";
 import clappingHandsImg from "../../../media/clapping-hands.png";
 import prayHandsImg from "../../../media/pray-hands.png";
 import studentImg from "../../../media/student.png"
+import {blue1, pink1, yellow1} from "../../../global/styles";
 
 class FacesBoard extends Component {
     componentDidMount() {
@@ -38,13 +39,13 @@ class FacesBoard extends Component {
                             {user.name.substr(0,user.name.indexOf(' '))}
                         </TitleFaceBox>
                         <KudosOptionsContainer>
-                            <KudosOption color="#149eec">
+                            <KudosOption color={blue1}>
                                 <KudosOptionImg src={studentImg} alt="student"/>
                             </KudosOption>
-                            <KudosOption color="#fff40b">
+                            <KudosOption color={yellow1}>
                                 <KudosOptionImg src={clappingHandsImg} alt="clapping-hands"/>
                             </KudosOption>
-                            <KudosOption color="#e50079">
+                            <KudosOption color={pink1}>
                                 <KudosOptionImg src={prayHandsImg} alt="pray-hands"/>
                             </KudosOption>
                         </KudosOptionsContainer>

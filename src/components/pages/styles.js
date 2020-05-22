@@ -10,4 +10,5 @@ export const PageTitle = styled.h1`
     font-weight: bold;
     font-family: 'Patua One', cursive, sans-serif;
     color: ${black1};
+    margin-bottom: 1em;
 `;

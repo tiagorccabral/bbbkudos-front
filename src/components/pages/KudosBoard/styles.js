@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {black1} from "../../../global/styles";
+import {black1, grey1} from "../../../global/styles";
 
 export const FacesBoardContainer = styled.div`
     margin-top: 1em;
@@ -77,4 +77,35 @@ export const KudosOption = styled.div`
 export const KudosOptionImg = styled.img`
    width: 1em;
    height: 1em;
+`;
+
+export const AvailableKudosOptionsContainer = styled.div`
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1.5em;
+    opacity: 1;
+`;
+
+export const AvailableKudosTitleContainer = styled.div`
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: baseline;
+`;
+
+export const AvailableKudosTitle = styled.div`
+    font-family: 'Patua One', cursive, sans-serif;
+    color: ${black1};
+    font-weight:bolder;
+    font-size: 1em;
+`;
+
+export const AvailableKudosSubtitle = styled.div`
+    font-family: 'Patua One', cursive, sans-serif;
+    color: ${grey1};
+    font-weight:bolder;
+    font-size: 0.7em;
 `;
