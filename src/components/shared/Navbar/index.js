@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {Navbar, Form, Button, Nav} from "react-bootstrap";
 import {connect} from 'react-redux';
-import {NavbarImage, ProfilePictureImage} from "./style";
+import {NavbarImage, ProfilePictureImage, TooltipRoundDiv, TooltipText} from "./style";
 import {logoutUser} from "../../../actions/authActions";
 import {imageEndpoint} from "../../../utils/globals";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 // import Logo from '../../../media/logonova.png'
 
 class NavbarComponent extends Component {
@@ -34,6 +36,19 @@ class NavbarComponent extends Component {
                             <Nav.Link href="/timeline">Timeline</Nav.Link>
                             <Nav.Link href="/my-kudos">Meus kudos</Nav.Link>
                         </Nav>
+                            <OverlayTrigger
+                                key="right"
+                                placement="right"
+                                overlay={
+                                    <Tooltip id={`tooltip-right`}>
+                                        Esse é você
+                                    </Tooltip>
+                                }
+                            >
+                                <TooltipRoundDiv>
+                                    <TooltipText>?</TooltipText>
+                                </TooltipRoundDiv>
+                            </OverlayTrigger>
                             <ProfilePictureImage
                                 alt="LOGO"
                                 src={`${imageEndpoint}/${auth.user.profile_image}`}
