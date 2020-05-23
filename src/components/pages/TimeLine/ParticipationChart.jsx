@@ -102,6 +102,11 @@ class ParticipationChart extends Component {
 
         return (
             <>
+                <Row style={{marginBottom: 10}}>
+                    <Col>
+                        {chartsToLoad}
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs={12}>
                         <Table responsive striped bordered hover>
@@ -115,9 +120,6 @@ class ParticipationChart extends Component {
                                 {tableToLoad}
                             </tbody>
                         </Table>
-                    </Col>
-                    <Col>
-                        {chartsToLoad}
                     </Col>
                 </Row>
             </>
