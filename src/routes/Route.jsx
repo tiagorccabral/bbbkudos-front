@@ -4,8 +4,12 @@ import { connect } from "react-redux";
 
 class RouteWrapper extends Component {
     render() {
-        const { component: Component, isPrivate, ...rest } = this.props;
+        const { component: Component, isPrivate, isNotFound, ...rest } = this.props;
         const { auth } = this.props;
+
+        if (isNotFound) {
+            return <Route {...rest} component={Component} />
+        }
 
         if (isPrivate && auth && !auth.isAuthenticated) {
             return <Redirect to="/login" />;

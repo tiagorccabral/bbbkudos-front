@@ -37,3 +37,11 @@ export const TooltipText = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
+export const NavLinkText = styled.div`
+     color: ${black1};
+     font-weight: 600;
+     display: flex;
+     align-self: flex-end;
+     text-decoration: ${(props) => props.underline || "false"};
+`;
