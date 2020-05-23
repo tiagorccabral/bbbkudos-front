@@ -5,7 +5,7 @@ function Footer() {
     return (
         <FooterContainer>
             <TextContainer>
-                <FooterText>voltar ao topo</FooterText>
+                <FooterText onClick={()=> window.scrollTo({top: 0, behavior: 'smooth'})}>voltar ao topo</FooterText>
             </TextContainer>
         </FooterContainer>
     );

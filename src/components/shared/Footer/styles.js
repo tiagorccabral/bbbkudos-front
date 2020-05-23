@@ -22,4 +22,5 @@ export const FooterText = styled.div`
     font-weight: bold;
     font-size: ${mediaTextSize};
     text-align: center;
+    cursor: pointer;
 `;

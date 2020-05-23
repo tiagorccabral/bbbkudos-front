@@ -13,6 +13,7 @@ export const MediaNavItems = styled.ul`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding: 0;
 `;
 
 export const MediaNavItem = styled.li`
@@ -31,4 +32,35 @@ export const MediaIconsContainer = styled.div`
 
 export const MediaLinkIcon = styled.a`
     color: inherit;
+`;
+
+export const SlackContainerHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: no-wrap;
+    justify-content: flex-start;
+`;
+
+export const SlackImageContainer = styled.img`
+    height: 3em;
+    width: 3em;
+    margin-right: 1em;
+`;
+
+export const SlackTitlesContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+`;
+
+export const SlackTitleText = styled.div`
+    color: ${black1};
+    font-family: "Patua One", cursive, sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+`;
+
+export const SlackSubTitleText = styled.div`
+    color: ${black1};
+    font-size: 0.9em;
 `;
