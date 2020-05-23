@@ -19,9 +19,7 @@ class NavbarComponent extends Component {
         const onLogoutPress = () => {
             this.props.logoutUser();
         };
-
-        console.log(this.props);
-
+        
         const {auth, location} = this.props;
         let navComponent = null;
 
