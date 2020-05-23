@@ -20,6 +20,8 @@ import prayHandsImg from "../../../media/pray-hands.png";
 import { getAvailableKudos } from "../../../actions/kudoActions";
 import { connect } from "react-redux";
 import { isEmpty } from "../../../utils/validation";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 class AvailableKudos extends Component {
     componentDidMount() {
@@ -51,6 +53,15 @@ class AvailableKudos extends Component {
                                 </AvailableKudosSubtitle>
                             </AvailableKudosTitleContainer>
                             <AvailableKudosOptionsContainer>
+                                <OverlayTrigger
+                                    key="right-learned"
+                                    placement="right"
+                                    overlay={
+                                        <Tooltip id={`tooltip-learned`}>
+                                            Eu aprendi
+                                        </Tooltip>
+                                    }
+                                >
                                 <KudosOption color={blue1}>
                                     <KudosOptionImg src={studentImg} alt="student" />
                                     <KudosAvailableDiv>
@@ -62,6 +73,16 @@ class AvailableKudos extends Component {
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
+                                </OverlayTrigger>
+                                <OverlayTrigger
+                                    key="right-awesome"
+                                    placement="right"
+                                    overlay={
+                                        <Tooltip id={`tooltip-awesome`}>
+                                            Foi Incrível
+                                        </Tooltip>
+                                    }
+                                >
                                 <KudosOption color={yellow1}>
                                     <KudosOptionImg
                                         src={clappingHandsImg}
@@ -76,6 +97,16 @@ class AvailableKudos extends Component {
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
+                                </OverlayTrigger>
+                                <OverlayTrigger
+                                    key="right-grateful"
+                                    placement="right"
+                                    overlay={
+                                        <Tooltip id={`tooltip-grateful`}>
+                                            Sou grato
+                                        </Tooltip>
+                                    }
+                                >
                                 <KudosOption color={pink1}>
                                     <KudosOptionImg
                                         src={prayHandsImg}
@@ -90,6 +121,7 @@ class AvailableKudos extends Component {
                                         </KudosAvailableText>
                                     </KudosAvailableDiv>
                                 </KudosOption>
+                                </OverlayTrigger>
                             </AvailableKudosOptionsContainer>
                         </Card.Body>
                     </Card>
