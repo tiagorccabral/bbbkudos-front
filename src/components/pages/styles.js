@@ -12,3 +12,10 @@ export const PageTitle = styled.h1`
     color: ${black1};
     margin-bottom: 1em;
 `;
+
+export const PageSubTitle = styled.h3`
+    font-weight: bold;
+    font-family: "Patua One", cursive, sans-serif;
+    color: ${black1};
+    margin-bottom: 0.5em;
+`;

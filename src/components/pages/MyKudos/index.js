@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Container from "react-bootstrap/Container";
 import {ContentSeparator, PageTitle} from "../styles";
+import MyKudosTable from "./MyKudosTable";
 
 class MyKudos extends Component {
     render() {
@@ -8,6 +9,7 @@ class MyKudos extends Component {
             <Container>
                 <ContentSeparator>
                     <PageTitle>Meus Kudos</PageTitle>
+                    <MyKudosTable />
                 </ContentSeparator>
             </Container>
         );
